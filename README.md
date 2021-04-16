@@ -19,7 +19,11 @@ There are three main components:
 ----TODO's----
 
 1- no metadata for objects, fields, tabs, data etc.. add such stuff to make it easy to install and use for people.
+
+
 2- data model can be more complex. products can have stock info and can have discount declared to them. fields exist for these on objects but are not used in implementation.
+
+
 3- filters can show product numbers next to the checkboxes respectively.
 
 
