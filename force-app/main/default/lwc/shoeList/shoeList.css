@@ -1,0 +1,22 @@
+.slds-card {
+  background: rgb(255, 255, 255);
+}
+
+.search-bar {
+  display: block;
+  margin: 0 0.5rem 0.3rem 0.5rem;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+c-shoe {
+  min-width: 200px;
+  flex: 1;
+}
+
+c-paging {
+  display: block;
+}

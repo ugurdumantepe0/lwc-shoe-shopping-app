@@ -1,0 +1,138 @@
+<template>
+  <lightning-card title="Filters" icon-name="standard:calibration">
+    <div class="slds-var-m-horizontal_medium">
+      <lightning-input
+        label="Search Key"
+        type="search"
+        onchange={handleSearchKeyChange}
+      ></lightning-input>
+      <section>
+        <lightning-slider
+          label="Max Price"
+          step="100"
+          min="0"
+          max="500"
+          value={maxPrice}
+          onchange={handleMaxPriceChange}
+        ></lightning-slider>
+      </section>
+      <section>
+        <h1>Category</h1>
+        <template if:true={categories.data}>
+          <template for:each={categories.data.values} for:item="category">
+            <lightning-input
+              key={category.value}
+              label={category.label}
+              data-filter="categories"
+              data-value={category.value}
+              type="checkbox"
+              checked
+              onchange={handleCheckboxChange}
+            ></lightning-input>
+          </template>
+        </template>
+        <template if:true={categories.error}>
+          <c-filter-error
+            type="inlineMessage"
+            friendly-message="Error loading categories"
+            errors={categories.error}
+          ></c-filter-error>
+        </template>
+      </section>
+      <section>
+        <h1>Water Proofing</h1>
+        <template if:true={waterproofs.data}>
+          <template for:each={waterproofs.data.values} for:item="waterproof">
+            <lightning-input
+              key={waterproof.value}
+              label={waterproof.label}
+              data-filter="waterproofs"
+              data-value={waterproof.value}
+              type="checkbox"
+              checked
+              onchange={handleCheckboxChange}
+            ></lightning-input>
+          </template>
+        </template>
+        <template if:true={waterproofs.error}>
+          <c-filter-error
+            type="inlineMessage"
+            friendly-message="Error loading waterproofs"
+            errors={waterproofs.error}
+          ></c-filter-error>
+        </template>
+      </section>
+      <section>
+        <h1>Brand</h1>
+
+        <template if:true={brands.data}>
+          <template for:each={brands.data.values} for:item="brand">
+            <lightning-input
+              key={brand.value}
+              label={brand.label}
+              data-filter="brands"
+              data-value={brand.value}
+              type="checkbox"
+              checked
+              onchange={handleCheckboxChange}
+            ></lightning-input>
+          </template>
+        </template>
+
+        <template if:true={brands.error}>
+          <c-filter-error
+            type="inlineMessage"
+            friendly-message="Error loading brands"
+            errors={brands.error}
+          ></c-filter-error>
+        </template>
+      </section>
+      <section>
+        <h1>Gender</h1>
+        <template if:true={genders.data}>
+          <template for:each={genders.data.values} for:item="gender">
+            <lightning-input
+              key={gender.value}
+              label={gender.label}
+              data-filter="genders"
+              data-value={gender.value}
+              type="checkbox"
+              checked
+              onchange={handleCheckboxChange}
+            ></lightning-input>
+          </template>
+        </template>
+        <template if:true={genders.error}>
+          <c-filter-error
+            type="inlineMessage"
+            friendly-message="Error loading genders"
+            errors={genders.error}
+          ></c-filter-error>
+        </template>
+      </section>
+      <section>
+        <h1>Color</h1>
+        <template if:true={colors.data}>
+          <template for:each={colors.data.values} for:item="color">
+            <lightning-input
+              key={color.value}
+              label={color.label}
+              data-filter="colors"
+              data-value={color.value}
+              type="checkbox"
+              checked
+              onchange={handleCheckboxChange}
+            ></lightning-input>
+          </template>
+        </template>
+        <template if:true={colors.error}>
+          <c-filter-error
+            type="inlineMessage"
+            friendly-message="Error loading genders"
+            errors={colors.error}
+          ></c-filter-error>
+        </template>
+      </section>
+    </div>
+  </lightning-card>
+</template>

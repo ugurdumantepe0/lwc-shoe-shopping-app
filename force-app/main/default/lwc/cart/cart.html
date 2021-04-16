@@ -1,0 +1,42 @@
+<template>
+  <template if:true={showCart}>
+    <lightning-card
+      title="Cart"
+      icon-name="standard:checkout"
+      style="height: 600px"
+    >
+      <lightning-datatable
+        key-field="id"
+        data={lineItems}
+        hide-checkbox-column="true"
+        onrowaction={handleDeleteProduct}
+        show-row-number-column="false"
+        columns={columns}
+      >
+      </lightning-datatable>
+
+      <br />
+
+      <div class="slds-text-align_right" style="padding-right: 15px">
+        Total Price :
+
+        <lightning-formatted-number
+          value={totalPrice}
+          format-style="currency"
+          currency-code="EUR"
+          currency-display-as="code"
+        ></lightning-formatted-number>
+      </div>
+    </lightning-card>
+    <br />
+    <div class="slds-float_right">
+      <lightning-button
+        variant="brand"
+        label="Create Order"
+        title="Primary action"
+        onclick={handleCreateOrder}
+        class="slds-m-left_x-small"
+      ></lightning-button>
+    </div>
+  </template>
+</template>

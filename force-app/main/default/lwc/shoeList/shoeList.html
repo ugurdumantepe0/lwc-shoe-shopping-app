@@ -1,0 +1,35 @@
+<template>
+  <div class="slds-card slds-var-p-around_x-small">
+    <template if:true={products.data}>
+      <template if:true={products.data.records.length}>
+        <div class="content">
+          <template for:each={products.data.records} for:item="product">
+            <c-shoe
+              key={product.Id}
+              product={product}
+              draggable={tilesAreDraggable}
+              onselected={handleProductAdded}
+              class="slds-var-m-around_x-small"
+            >
+            </c-shoe>
+          </template>
+        </div>
+        <c-paging
+          page-number={pageNumber}
+          page-size={products.data.pageSize}
+          total-item-count={products.data.totalItemCount}
+          onprevious={handlePreviousPage}
+          onnext={handleNextPage}
+        ></c-paging>
+      </template>
+      <template if:false={products.data.records.length}>
+        <c-logo
+          message="There are no products matching your current selection"
+        ></c-logo>
+      </template>
+    </template>
+    <template if:true={products.error}>
+      <c-filter-error errors={products.error}></c-filter-error>
+    </template>
+  </div>
+</template>
