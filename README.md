@@ -2,7 +2,7 @@
 
 A simple shopping app developed with lwc and apex
 
-This project has a simple data model with three custom objects. Shoe_Product__c, Shoe_Order_Line_Item__c and Shoe_Order__c 
+This project has a simple data model with three custom objects. Shoe_Product__c, Shoe_Order_Line_Item__c and Shoe_Order__c. Check jpeg images for details about object and how the app looks.
 
 There are three main components:
 
